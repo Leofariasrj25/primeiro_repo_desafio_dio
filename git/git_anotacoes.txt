@@ -1,0 +1,19 @@
+sha encripta um objeto e retorna um conjunto de 40 caracteres
+
+Objetos internos do git
+	blobs
+	trees
+	commits
+	
+	blobs são objetos que armazenam metadados e o arquivo em si, e estes são encriptados usando sha1
+		pense nos blobs como os elementos básicos de construção de um repositório no git]
+		
+	A tree também é um objeto mas ela é um objeto que aponta para diferentes blobs e que contém metados sobre 
+	essa relação, ou seja, elas são responsáveis por montar todar a estrutura de localização de um arquivo
+		uma árvore também possui um sha1 dos seus metadados e do sha1 dos blobs ou árvores que aponta
+			ou seja, se mudou em um lugar então mudou em todos os lugares.
+			
+	O commit é o objeto que une essa "porra toda" e assim dá significado. um commit é um objeto que vai gravar no tempo todas as alterações que estão armazendas nas blobs e ávores.
+	E um commit também possui um sha1 do estado atual de todas as árvores e seus metados e de todos os blobs e seus respectivos
+	metados.
+		novamente: se mudou em um lugar, então irá mudar em todos os lugares
